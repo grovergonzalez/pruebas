@@ -1,10 +1,26 @@
-import Calculadora from "./Calculadora";
+import Calculadora from './Calculadora.js';
 
-const frase = document.querySelector("#frase");
-const form = document.querySelector("#Calcular-form");
-const div = document.querySelector("#resultado-div");
+const fraseInput = document.getElementById('frase-input');
+const calcularBtn = document.getElementById('calcular-btn');
+const fraseResultado = document.getElementById('frase-resultado');
+const palabrasSeparadasResultado = document.getElementById('palabras-separadas-resultado');
+const contadorPalabrasResultado = document.getElementById('contador-palabras-resultado');
 
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-  div.innerHTML = "frase:" + "<p>" + frase.value + "</p>";
+calcularBtn.addEventListener('click', () => {
+  const frase = fraseInput.value;
+  
+  const calculadora = new Calculadora(frase);
+  
+  fraseResultado.textContent = `Frase ingresada: ${calculadora.get_frase(frase)}`;
+  
+  const palabrasSeparadas = calculadora.separar_palabras(frase);
+  palabrasSeparadasResultado.textContent = `Palabras separadas: ${palabrasSeparadas.join(', ')}`;
+  
+  const contadorPalabras = calculadora.contar_palabras_iguales(frase);
+  contadorPalabrasResultado.textContent = 'Contador de palabras:';
+  
+  Object.keys(contadorPalabras).forEach(palabra => {
+    const cantidad = contadorPalabras[palabra];
+    contadorPalabrasResultado.innerHTML += `<div>${palabra}: ${cantidad}</div>`;
+  });
 });
