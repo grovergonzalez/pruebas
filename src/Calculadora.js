@@ -5,6 +5,10 @@ class Calculadora{
     get_frase(frase){
         return frase;
     }
+    separar_palabras(frase){
+        var palabras = frase.split(" ");
+        return palabras;
+    }
 }
 
 export default Calculadora;

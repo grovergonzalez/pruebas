@@ -8,4 +8,8 @@ describe("Calcular cuantas veces aparece una palabra en una frase", () => {
     it("deberia retornar la frase como parámetro", () => {
         expect(newfrase.get_frase(newfrase)).toEqual({"frase": "juan esta de vacaciones"});
     });
+    var frasec = "Esto es una frase";
+    it("deberia retornar la frase de palabras separada por espacios en un array ", () => {
+        expect(newfrase.separar_palabras(frasec)).toEqual(["Esto", "es", "una", "frase"]);
+    });
   });
