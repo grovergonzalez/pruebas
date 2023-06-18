@@ -18,4 +18,7 @@ describe("Calcular cuantas veces aparece una palabra en una frase", () => {
     it("deberia retornar la frase de palabras separada por diferentes caracteres en un array ", () => {
         expect(newfrase.separar_palabras(frasec)).toEqual(["Esto", "es", "una", "frase"]);
     });
+    it("deberia retornar la frase de palabras separada por diferentes caracteres y las cantidad de ocurrencias de cada palabra en la frase ", () => {
+        expect(newfrase.contar_palabras_iguales(frasec)).toEqual({"Esto": 1, "es": 1, "frase": 1, "una": 1});
+    });
   });
