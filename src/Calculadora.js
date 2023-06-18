@@ -6,7 +6,7 @@ class Calculadora{
         return frase;
     }
     separar_palabras(frase){
-        var palabras = frase.split(" ");
+        const  palabras = frase.split(/\W+/);
         return palabras;
     }
 }
