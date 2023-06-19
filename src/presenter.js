@@ -14,9 +14,9 @@ calcularBtn.addEventListener('click', () => {
   fraseResultado.textContent = `Frase ingresada: ${calculadora.get_frase(frase)}`;
   
   const palabrasSeparadas = calculadora.separar_palabras(frase);
-  palabrasSeparadasResultado.textContent = `Palabras separadas: ${palabrasSeparadas.join(', ')}`;
-  
-  const contadorPalabras = calculadora.contar_palabras_iguales(frase);
+  palabrasSeparadasResultado.textContent = `Palabras separadas: ${palabrasSeparadas.join(',')}`;
+
+  const contadorPalabras = calculadora.contar_palabras_iguales(frase.toLowerCase());
   contadorPalabrasResultado.textContent = 'Contador de palabras:';
   
   Object.keys(contadorPalabras).forEach(palabra => {
